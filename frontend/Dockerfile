@@ -1,9 +1,9 @@
 # ビルドステージ
 FROM node:20.11.0 AS build
 WORKDIR /usr/src/app
-COPY package.json ./
+COPY my-app/package.json ./
 RUN npm install
-COPY . .
+COPY my-app ./
 RUN npm run build
 
 # 実行ステージ
